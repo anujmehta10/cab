@@ -1,0 +1,55 @@
+.container-fluid{
+	background-image: url("cab.png");
+	background-repeat: none;
+	text-align: center;
+	opacity: 0.9;	
+	min-height: 85vh;
+	user-select: none;
+
+}
+.container-fluid h2{
+	color: white;
+	font-size: 35px;
+}
+.container-fluid p{
+	color: white;
+	font-size:22px;
+}
+.cc{
+	background-color: #D7DF23;
+}
+.cc a{
+	user-select: none;
+}
+
+span{
+	font-size: 20px;
+	background-color: #D7DF23;
+	border-radius: 34px;
+}
+.space{
+	border-radius: 5px;
+	background-color: white;
+	margin-left:15px;
+	margin-right: 15px;
+
+}
+#inputGroupSelect01 {
+	background:none;
+}
+#inputGroupSelect02{
+	background:none;
+}
+#inputGroupSelect03{
+	background:none;
+}
+.qwe{
+	background-color: #D7DF23;
+}
+.col h4{
+	text-align: center;
+	user-select: none;
+}
+.cx{
+	margin-bottom: 8px;
+}

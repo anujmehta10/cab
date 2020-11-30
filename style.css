@@ -1,0 +1,28 @@
+.topnav{
+	height:60px;
+	background-color: #D7DF23;
+	width: 100%;
+}
+span{
+	font-size: 34px;
+}
+.topnav a{
+	float: right;
+	padding: 15px;
+}
+.back{
+	background-image: url("cab.png");
+	width:100%;
+	height: 520px;
+}
+.cover{
+	padding-top: 60px;
+}
+.xc{
+	background-color: #D7DF23;
+	height: 60px;
+	bottom: 0;
+	width: 100%;
+	margin-top: -16px;
+	text-align: center;
+}
