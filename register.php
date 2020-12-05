@@ -10,7 +10,8 @@ if(isset($_POST['submit']))
         
 		
 		$user_name = isset($_POST['user_name']) ? ($_POST['user_name']) : '';
-		$name = isset($_POST['name']) ? ($_POST['name']) : '';
+       
+        $name = isset($_POST['name']) ? ($_POST['name']) : '';
         $password = isset($_POST['password']) ? ($_POST['password']) : '';
         $repassword = isset($_POST['repassword']) ? ($_POST['repassword']) : '';
         $mobile=isset($_POST['mobile']) ? ($_POST['mobile']) : '';
