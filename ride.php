@@ -1,7 +1,7 @@
-<?php include('config.php');
+<?php session_start();
+include('config.php');
 
-session_start();
-$obj=new DB_con();
+$obj = new DB_con();
 $message = '';
 $errors = array();
 
@@ -16,7 +16,7 @@ $arr=array(
 	);
 			
 	
-	if(isset($_GET['click'])){
+	 if(isset($_GET['showfair'])||isset($_GET['bookcab'])){
 		
 			$pick=$_GET['pick'];
 			$drop=$_GET['drop'];
@@ -44,7 +44,6 @@ $arr=array(
 					{
 						$fare=$fixedfare+(10*13.50)+(50*12.00)+(100*10.20)+($distance-160)*8.50;
 					}
-					
 					$fare= $fare;
 
 				}
@@ -80,7 +79,7 @@ $arr=array(
 					{
 						$fare=$fare+200;
 					}
-					$fare =$fare;
+					$fare= $fare;
 
 					
 				}
@@ -117,7 +116,8 @@ $arr=array(
 					{
 						$fare=$fare+200;
 					}
-					$fare =$fare;
+					$fare= $fare;
+
 				}
 
 
@@ -153,21 +153,33 @@ $arr=array(
 					{
 						$fare=$fare+400;
 					}
-					$fare =$fare;
+					$fare= $fare;
+					
+				}
+				if(isset($_GET['showfair'])){
+						echo $fare;
+					}
+				else if(isset($_GET['bookcab'])){
+					$fare= $fare;
+					$user_id=$_SESSION['userdata']['user_id'];
+
+					$obj->pass($pick, $drop, $distance, $luggage, $fare,$ctype,$user_id);
+
+
+
 				}
 
+				
 
-				$obj->pass($pick, $drop, $distance, $luggage, $fare);
-			
-				//$sql="INSERT INTO tbl_ride(`ride_date`, `from`,`to`,`total_distance`,`luggage`,`total_fare`,`status`)
-            //VALUES(NOW(), '" . $pick . "','" . $drop . "','" . $distance . "','" . $luggage . "','" .$fare . "
-			//','1')";
-	
-				/*$insert = "INSERT INTO tbl_ride(`ride_date`, `from`,`to`,`total_distance`,`luggage`,`total_fare`,`status`)
-            VALUES('NOW()', '$pick','$drop','$distance','$luggage','$fare','1')";
-            $result = mysqli_query($conn,$insert);
-            echo "$fare";
-             echo "$fare,$pick,$drop";*/
+				/*$_SESSION["array"] = array(
+					"pick"  =>$pick,
+					"drop" =>$drop,
+					"ctype" =>$ctype,
+					"luggage"=>$luggage,
+					"distance"=>$distance,
+					"fare"=>$fare
+
+				);*/
 
 	}
 

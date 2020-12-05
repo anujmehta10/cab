@@ -1,6 +1,5 @@
-<?php include('config.php');
-
-session_start();
+<?php session_start();
+include('config.php');
 $obj=new DB_con();
 $message = '';
 $errors = array();
@@ -8,6 +7,7 @@ $errors = array();
 if(isset($_POST['submit']))
 	{
         //session_start();
+        
 		
 		$user_name = isset($_POST['user_name']) ? ($_POST['user_name']) : '';
 		$name = isset($_POST['name']) ? ($_POST['name']) : '';

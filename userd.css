@@ -6,6 +6,10 @@
 span{
 	font-size: 24px;
 }
+.icon{
+
+	font-size: 32px;
+}
 
 .back{
 	background-image: url("cab.png");
@@ -18,7 +22,41 @@ span{
 .xc{
 	background-color: #D7DF23;
 	height: 60px;
-	bottom: 0;
+	bottom: 0px;
 	width: 100%;
+	position: fixed;
+}
+
+#tabledecorate {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tabledecorate td, #tabledecorate th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabledecorate tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabledecorate tr:hover {background-color: #ddd;}
+
+#tabledecorate th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  }
+.tiles{
+	padding:10px;
+	margin-left: 120px;
+	margin-top: 40px;
+	background-color: #D7DF23;
+	height:160px;
+	width:210px;
+	text-align: center;
+	border-radius: 5px;
 }
 

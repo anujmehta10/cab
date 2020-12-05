@@ -1,6 +1,5 @@
-<?php include('config.php');
-
-session_start();
+<?php session_start();
+include('config.php');
 $obj=new DB_con();
 $message = '';
 $errors = array();
@@ -30,6 +29,7 @@ if(isset($_POST['login']))
 		}*/
          $obj->login($user_name, $password);
          
+         
 	 
 	}
 
@@ -45,10 +45,8 @@ if(isset($_POST['login']))
         <div class="topnav">
         <span>Login</span>
         <a href="trial.html">Calculate Fare</a>
-        <a href="register.php">SignUp</a>
-        <a>Home</a>
-        <a>Contact</a>
-        <a>About</a>
+        <a href="register.php">SignUp</a> 
+        <a href="login.php">Admin</a>
         </div>
         <div class="back">
             <div class=cover>

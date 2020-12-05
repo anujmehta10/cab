@@ -29,12 +29,12 @@
 		      <li class="nav-item active ">
 		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item ">
-		        <a class="nav-link" href="register.php">SignUp</a>
-		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="login.php">Login</a>
 		      </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="register.php">SignUp</a>
+              </li>
 		    </ul>
 		  </div>
 		</nav>
@@ -99,31 +99,11 @@
                    
                 <button id="button" type="button" class="btn btn-primary btn-lg btn-block cx" style="background-color: #D7DF23; color:black;
                 ">Calculate Fare</button>
+                <button id="book" type="button" class="btn btn-primary btn-lg btn-block cx" style="background-color: #D7DF23; color:black;
+                ">Book Now</button>
 
                
-            <!--  <div class="modal" id="myModal">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                      
-                        
-                        <div class="modal-header">
-                          <h4 class="modal-title">Modal Heading</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        
-                        
-                        <div class="modal-body">
-                          Modal body..
-                        </div>
-                        
-                        <
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>-->
+            
            </div>
             
         </div>
@@ -150,28 +130,30 @@
 
 	$('#button').click(function(){
 		var pick= $('#inputGroupSelect01').val();
-		var drop= $('#inputGroupSelect02').val();
-		var ctype= $('#inputGroupSelect03').val();
-		var luggage= $('#luggage').val();
+        var drop= $('#inputGroupSelect02').val();
+        var ctype= $('#inputGroupSelect03').val();
+        var luggage= $('#luggage').val();
+        
 					
 			
-			if(pick!='Current location...'&&drop!='Destination...'&&ctype!='Choose...')
+			if(pick!='Current location...' && drop!='Destination...' && ctype!='Choose...')
 			{
 			$.ajax({
 				url: 'ride.php',
 				method:'GET',
 				data:{
+                    showfair:true,
 					pick: pick,
 					drop: drop,
 					ctype: ctype,
-					luggage: luggage,
-					"click": "ok"
+					luggage: luggage
+					
 				},
 				
-				contentType: "application/json; charset=utf-8",
+				
 				success: function(result) {
 					//console.log(result);
-
+                        
                  $("#button").text("Rs"+result);
 			          
 
@@ -181,35 +163,51 @@
 				}
 			}); 
 		}
-         
-        /*$.ajax({
-            url:'admin_dashboard.php',
+       
+        });
+
+
+
+
+       $('#book').click(function(){
+        var pick= $('#inputGroupSelect01').val();
+        var drop= $('#inputGroupSelect02').val();
+        var ctype= $('#inputGroupSelect03').val();
+        var luggage= $('#luggage').val();
+                    
+            
+        if(pick!='Current location...'&&drop!='Destination...'&&ctype!='Choose...')
+        { 
+        $.ajax({
+            url:'ride.php',
             method:'GET',
             data:{
+                bookcab:true,
                 pick:pick,
                 drop:drop,
                 ctype:ctype,
-                luggage:luggage, 
-                distance:distance,
-                fare:fare,
-                "click":"ok"
+                luggage:luggage
+                
             },
-            contentType: "application/json; charset=utf-8",
                 success: function(result) {
+                   
+                   $(location).attr('href','login.php');
+                                                                               
                     //console.log(result);
-
-              echo"dashboard success";
-                      
-
+                    //alert("Data Added Success");
+                                                               
                        },
                 error:function(){
                     alert("error");
-                }
+                
+            }
 
-        })*/
+        });
+    }
+
+    });
 
 
-	});
 
 </script>
 
